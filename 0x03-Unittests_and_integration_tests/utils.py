@@ -28,15 +28,14 @@ def access_nested_map(nested_map: Mapping, path: Sequence) -> Any:
         a sequence of key representing a path to the value
     Example
     -------
-    >>> nested_map = {"a": {"b": {"c": 1}}}
-    >>> access_nested_map(nested_map, ["a", "b", "c"])
+    >>> nested_map = {"a": {"b": }}{"c": 1} # nested_map['a']['b']['c']
+    >>> access_nested_map(nested_map, ["a", "b", "c"]) # access_nested_map({"a": {"b": {"c": 1}}}, ['a', 'b', 'c']) = 
     1
     """
     for key in path:
         if not isinstance(nested_map, Mapping):
-            raise KeyError(key)
-        nested_map = nested_map[key]
-
+            raise KeyError(key)  # nested_map as an int/str/bool
+        nested_map = nested_map[key] # 1
     return nested_map
 
 
