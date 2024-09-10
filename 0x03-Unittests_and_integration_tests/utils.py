@@ -43,7 +43,7 @@ def access_nested_map(nested_map: Mapping, path: Sequence) -> Any:
 def get_json(url: str) -> Dict:
     """Get JSON from remote URL.
     """
-    response = requests.get(url)
+    response = requests.get(url) # mock object is created from this line and i will be calling it with mock_get
     return response.json()
 
 
